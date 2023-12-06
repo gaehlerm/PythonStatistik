@@ -15,5 +15,10 @@ nobel["alter"] = nobel["jahr"] - nobel["geboren"]
 nobel["alter_tage"] = nobel["alter"].dt.days
 nobel["alter_jahre"] = nobel["alter_tage"]/365.25
 
+# Hinweis zu den Daten: Bei den Empfängern des Friedensnobelpreises handelt es sich
+# um Organisationen, die kein Geburtsdatum haben. Daher ist das Alter dort nicht bekannt oder irreführend.
 nobel.hist(column="alter_jahre")
+plt.xlabel('Alter')
+plt.ylabel('Anzahl der Nobelpreisträger')
+plt.title(f'Alter der Nobelpreisträger')
 plt.show() 
