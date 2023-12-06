@@ -3,9 +3,6 @@ from scipy.optimize import curve_fit
 import matplotlib.pyplot as plt
 
 
-def lese_csv(dateiname):
-    return pd.read_csv(dateiname, sep=',')
-
 def filtere_daten_nach_schluessel(alle_daten, schluessel, wert):
     gefilterte_daten = alle_daten[alle_daten[schluessel] == wert]
     return gefilterte_daten

@@ -1,3 +1,5 @@
+import pandas as pd
+
 from CoronaHelfer import *
 
 # Dies ist ein Beispielprogramm wie man Daten zur Übersterblichkeit von Corona aus einer CSV-Datei
@@ -10,8 +12,8 @@ from CoronaHelfer import *
 # müssen nur angeschaut werden, wenn man die Details verstehen möchte.
 
 # daten von https://www.corona-daten-deutschland.de/dataset/uebersterblichkeit
-alle_daten = lese_csv("uebersterblichkeit.csv")
-SH = filtere_daten_nach_schluessel(alle_daten, "bundesland", "Schleswig-Holstein")
+alle_daten = pd.read_csv("uebersterblichkeit.csv")
+SH = filtere_daten_nach_schluessel(alle_daten, schluessel="bundesland", wert="Schleswig-Holstein")
 fuege_monats_und_jahreszahlen_hinzu(SH)
 
 # https://www.askpython.com/python/examples/curve-fitting-in-python
